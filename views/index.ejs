@@ -20,6 +20,10 @@
         </script>
         <style>
 
+        .hideme{
+            opacity: 0.3;
+        }
+
 
 
         #datee{
@@ -67,31 +71,55 @@ nav.nav-center ul li a {
     display: inline-block;
 }
 
-
-.typewriter h3 {
+@media (max-width: 767px) {
+    .typewriter {
     position: absolute;
     top: 40%;
-    left: 32%;
-    color: #37474f;
+    left: 0%;
+    color: black;
     overflow: hidden;
     border-right: .15em solid orange; 
     white-space: nowrap; 
     margin: 0 auto; 
     letter-spacing: 0.10em; 
     animation: 
-    typing 3.5s steps(30, end),
+    typing 3.0s steps(30, end),
     blink-caret .5s step-end infinite;
 }
+}
+
+@media (min-width: 767px) {
+.typewriter {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: black;
+    overflow: hidden;
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: 0.10em; 
+    animation: 
+    typing 3.0s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+}
+
+
+
 
 @keyframes typing {
   from { width: 10 }
-  to { width: 32% }
+  to { width: 35% }
 }
+
+
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
   20% { border-color: orange }
 }
+
 
     </style>
     
@@ -110,17 +138,21 @@ nav.nav-center ul li a {
                 </nav>
         
             <div style="width: 100%;height: 650;background-color: 81d4fa;position: relative;">
-            <div class="typewriter">
-                <h3>Hey, I'm Raloue Kapoor.</h3>
-            </div>
+            
+                <div class="typewriter">
+                <h3 >Hey, I'm Raloue</h3>
+                </div>
+                
             </div>
         
-        <div class="container">
+        <div class="container hideme">
             <h1 style="text-align: center" id="myjourney">
                 My Journey
             </h1>
             <br>
             <br>
+
+            
             <div class="row">
             <div class="center">
             <div class="col s12 l6"><img width="400" height="400" src="img/res.png"></div>
@@ -140,11 +172,19 @@ nav.nav-center ul li a {
                 
             </div>
             </div>
-            </div>
+            
+        </div>
 
-            <br>
-            <br>
-            <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+            <div class="row" >
             <div class="center">
             <div class="col s12 l6"><img width="400" height="400" src="img/technofarm3.jpeg"></div>
             </div>
@@ -160,7 +200,13 @@ nav.nav-center ul li a {
                     </div>
             </div>
             </div>
-
+        
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <br>
             <br>
             <div class="row">
@@ -183,6 +229,12 @@ nav.nav-center ul li a {
             </div>
             </div>
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <br>
             <br>
             <div class="row">
@@ -210,6 +262,12 @@ nav.nav-center ul li a {
 
             <br>
             <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="row">
             <div class="center">
             <div class="col s12 l6"><img width="400" height="400" src="img/codefundo-1.jpg"></div>
@@ -232,6 +290,12 @@ nav.nav-center ul li a {
 
             <br>
             <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="row">
             <div class="center">
             <div class="col s12 l6"><img width="400" height="400" src="img/algobed.jpg"></div>
@@ -247,6 +311,12 @@ nav.nav-center ul li a {
             </div>
             </div>
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <br>
             <br>
             <div class="row">
@@ -270,6 +340,12 @@ nav.nav-center ul li a {
             </div>
             </div>
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <br>
             <br>
             <div class="row">
@@ -390,7 +466,7 @@ nav.nav-center ul li a {
 
                             </div>
                   </div>
-
+             
                   <h4 style="text-align: center">
                         <a target="_blank" style="color: #0091ea" href="https://medium.com/@ralovekapoor"><i>Check out more amazing stories by clicking here</i></a>
                   </h4>
@@ -449,5 +525,39 @@ nav.nav-center ul li a {
             </div>
             </div>
         </footer>
+
+        <script>
+        $(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},1500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+
+
+
+
+
+
+
+        </script>
+
 
 </html>
