@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="js/anime-master/lib/anime.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
         <script>
             $(document).on("click","#ani",function(e){
             e.preventDefault();
@@ -19,6 +21,10 @@
         });
         </script>
         <style>
+
+            body{
+                font-family: 'Alegreya Sans SC', sans-serif;
+            }
 
         .hideme{
             opacity: 0.3;
@@ -74,7 +80,7 @@ nav.nav-center ul li a {
 @media (max-width: 767px) {
     .typewriter {
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 0%;
     color: black;
     overflow: hidden;
@@ -91,9 +97,9 @@ nav.nav-center ul li a {
 @media (min-width: 767px) {
 .typewriter {
     position: absolute;
-    top: 40%;
-    left: 38%;
-    color: black;
+    top: 20%;
+    left: 39%;
+    color: white;
     overflow: hidden;
     border-right: .15em solid orange; 
     white-space: nowrap; 
@@ -120,11 +126,41 @@ nav.nav-center ul li a {
   20% { border-color: orange }
 }
 
+img{
+
+ border: 8px solid #37474f;
+  border-radius: 4px;
+}
+
+.anim, .anim svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.anim path {
+  stroke-width: 2;
+}
+
+h1{
+    color: #37474f;
+}
+
+lowercase{
+    text-transform: lowercase
+}
+
+@media (min-width: 767px) {
+.comp{
+    position: absolute;
+    top: 10%;
+}
+}
+
 
     </style>
     
     </head>
-    <body>
+    <body style="background-color: #f5f2d0">
 
             <nav class="nav-center" style="background-color: #37474f" role="navigation">
                     <div class="nav-wrapper container">
@@ -137,15 +173,16 @@ nav.nav-center ul li a {
                     </div>
                 </nav>
         
-            <div style="width: 100%;height: 650;background-color: 81d4fa;position: relative;">
-            
-                <div class="typewriter">
-                <h3 >Hey, I'm Raloue</h3>
+            <div style="width: 100%;height: 650;background-color: #37474f;">
+                <div class="comp">
+                    <img  style="border: none" width="1100" height="500" class="center" src="img/start.png">
                 </div>
-                
+                <div class="typewriter">
+                    <h3>Hey, I'm Raloue</h3>
+                </div>
             </div>
         
-        <div class="container hideme">
+        <div class="container">
             <h1 style="text-align: center" id="myjourney">
                 My Journey
             </h1>
@@ -415,7 +452,7 @@ nav.nav-center ul li a {
 
             <div class="row">
                 <div class="center">
-                    <div class="col s12 l4">
+                    <div class="col s4 l4">
                       <div class="card">
                         <div class="card-image">
                           <img height="220" src="img/1.jpeg">
@@ -431,7 +468,7 @@ nav.nav-center ul li a {
                 </div>
 
                 <div class="center">
-                    <div class="col s12 l4">
+                    <div class="col s4 l4">
                             <div class="card">
                               <div class="card-image">
                                 <img height="220" src="img/2.jpeg">
@@ -449,7 +486,7 @@ nav.nav-center ul li a {
 
 
                         <div class="center">
-                          <div class="col s12 l4">
+                          <div class="col s4 l4">
                                 <div class="card">
                                   <div class="card-image">
                                     <img height="220" src="img/3.jpeg">
@@ -480,7 +517,7 @@ nav.nav-center ul li a {
                   </h1>
 
                   <h4 style="text-align: center">
-                    You can mail to me at ralouekapoor@gmail.com
+                    You can mail to me at <span class="lowercase">ralouekapoor@gmail.com</span>
                   </h4>
                   
                   <h4 style="text-align: center">
@@ -527,37 +564,23 @@ nav.nav-center ul li a {
         </footer>
 
         <script>
-        $(document).ready(function() {
-    
-    /* Every time the window is scrolled ... */
-    $(window).scroll( function(){
-    
-        /* Check the location of each desired element */
-        $('.hideme').each( function(i){
-            
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-            /* If the object is completely visible in the window, fade it it */
-            if( bottom_of_window > bottom_of_object ){
-                
-                $(this).animate({'opacity':'1'},1500);
-                    
-            }
-            
-        }); 
-    
-    });
-    
-});
-
-
-
-
-
-
-
-        </script>
+            var pathEls = document.querySelectorAll('path');
+for (var i = 0; i < pathEls.length; i++) {
+  var pathEl = pathEls[i];
+  var offset = anime.setDashoffset(pathEl);
+  pathEl.setAttribute('stroke-dashoffset', offset);
+  anime({
+    targets: pathEl,
+    strokeDashoffset: [offset, 0],
+    duration: anime.random(1000, 3000),
+    delay: anime.random(0, 2000),
+    loop: true,
+    direction: 'alternate',
+    easing: 'easeInOutSine',
+    autoplay: true
+  });
+}
+            </script>
 
 
 </html>
