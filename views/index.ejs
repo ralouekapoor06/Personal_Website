@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="js/anime-master/lib/anime.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <script>
             $(document).on("click","#ani",function(e){
             e.preventDefault();
@@ -79,29 +80,58 @@ nav.nav-center ul li a {
 
 
 
-
+@media screen and (min-width: 400px){
 .typewriter {
     position: absolute;
-    top: 18%;
-    left: 39%;
+    top: 13%;
+    left: 41%;
+    font-size: 40px;
     color: white;
     overflow: hidden;
     border-right: .15em solid orange; 
     white-space: nowrap; 
     margin: 0 auto; 
-    letter-spacing: 0.10em; 
+    letter-spacing: 0.006em; 
     animation: 
     typing 3.0s steps(30, end),
     blink-caret .5s step-end infinite;
 }
+}
 
 
 
+@media screen and (max-width: 399px){
+.typewriter {
+    position: absolute;
+    top: 23%;
+    left: 35%;
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    color: white;
+    overflow: hidden;
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: 0.006em; 
+    animation: 
+    typing 3.0s steps(30, end),
+    blink-caret .5s step-end infinite;
+}}
 
+@media screen and (max-width: 399px){
 @keyframes typing {
   from { width: 10 }
-  to { width: 22% }
+  to { width: 30% }
 }
+}
+
+@media screen and (min-width: 400px){
+@keyframes typing {
+  from { width: 10 }
+  to { width: 18% }
+}
+}
+
 
 
 
@@ -129,16 +159,83 @@ h1{
     color: #37474f;
 }
 
-lowercase{
-    text-transform: lowercase
-}
 
 
-.comp{
+@media screen and (min-width: 400px){
+#comp{
+    border: none;
+    width: 80%;
+    height: 500;
     position: absolute;
-    top: 10%;
-    left: 11%;
+    left: 12%;
 }
+}
+
+@media screen and (max-width: 399px){
+#comp{
+    position: absolute;
+    left: 2%;
+    border: none;
+    width: 100%;
+    height: 300;
+}
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 399px){
+.startbac{
+    width: 100%;
+    height: 300;
+    background-color: #37474f;
+    position: relative;
+}
+}
+
+@media screen and (min-width: 400px){
+.startbac{
+    width: 100%;
+    height: 650;
+    background-color: #37474f;
+    position: relative;
+}
+}
+
+@media screen and (min-width: 400px){
+.capp{
+    width: 400;
+    height: 400;
+}
+}
+
+@media screen and (max-width: 399px){
+.capp{
+    width: 100%;
+    height: 300;
+}
+}
+
+@media screen and (max-width: 399px){
+.fa-chess-pawn{
+    visibility: hidden;
+}
+}
+
+@media screen and (min-width: 400px){
+.fa-chess-pawn{
+    visibility: visible;
+}
+}
+
+a{
+    outline: none;
+}
+
+
 
 
     </style>
@@ -157,10 +254,10 @@ lowercase{
                     </div>
                 </nav>
         
-            <div style="width: 100%;height: 650;background-color: #37474f;">
-                <img  style="border: none" width="80%" height="500" class="comp" src="img/start.png">
+            <div class="startbac">
+                <img class="center" id="comp" src="img/start.png">
                 <div class="typewriter">
-                    <h3>Hey, I'm Raloue</h3>
+                    <div>Hey, I'm Raloue</div>
                 </div>
             </div>
         
@@ -174,7 +271,7 @@ lowercase{
             
             <div class="row">
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/res.png"></div>
+            <div class="col s12 l6"><img class="capp" src="img/res.png"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -205,7 +302,7 @@ lowercase{
 
             <div class="row" >
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/technofarm3.jpeg"></div>
+            <div class="col s12 l6"><img class="capp"  src="img/technofarm3.jpeg"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -230,7 +327,7 @@ lowercase{
             <br>
             <div class="row">
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/club.jpeg"></div>
+            <div class="col s12 l6"><img class="capp" src="img/club.jpeg"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -238,7 +335,7 @@ lowercase{
                 <h6 id="datee">Aug 2019</h6>
                 <div>
                     Founded my own club in the college to promote the chess culture.
-                </div>push/subscribe
+                </div>
                 <div>
                     Organized the biggest chess competition in the college.
                 </div>
@@ -258,7 +355,7 @@ lowercase{
             <br>
             <div class="row">
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/netcore.jpeg"></div>
+            <div class="col s12 l6"><img class="capp" src="img/netcore.jpeg"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -289,7 +386,7 @@ lowercase{
             <br>
             <div class="row">
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/codefundo-1.jpg"></div>
+            <div class="col s12 l6"><img class="capp" src="img/codefundo-1.jpg"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -317,7 +414,7 @@ lowercase{
             <br>
             <div class="row">
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/algobed.jpg"></div>
+            <div class="col s12 l6"><img class="capp" src="img/algobed.jpg"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -340,7 +437,7 @@ lowercase{
             <br>
             <div class="row">
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/meetcs.png"></div>
+            <div class="col s12 l6"><img class="capp" src="img/meetcs.png"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -369,7 +466,7 @@ lowercase{
             <br>
             <div class="row">
             <div class="center">
-            <div class="col s12 l6"><img width="400" height="400" src="img/manipal.jpg"></div>
+            <div class="col s12 l6"><img class="capp" src="img/manipal.jpg"></div>
             </div>
             <div class="center">
             <div class="col s12 l6">
@@ -400,7 +497,7 @@ lowercase{
                 &ensp;
                 <i class="fas fa-chess-rook" style="font-size: 64px"></i>
                 &ensp;
-                <i class="fas fa-chess-pawn" style="font-size: 64px"></i>
+                <i class="fas fa-chess-pawn"  style="font-size: 64px"></i>
             </div>
         <div style="text-align: center">
             <h6>
@@ -434,7 +531,7 @@ lowercase{
 
             <div class="row">
                 <div class="center">
-                    <div class="col s4 l4">
+                    <div class="col s12 l4">
                       <div class="card">
                         <div class="card-image">
                           <img height="220" src="img/1.jpeg">
@@ -450,7 +547,7 @@ lowercase{
                 </div>
 
                 <div class="center">
-                    <div class="col s4 l4">
+                    <div class="col s12 l4">
                             <div class="card">
                               <div class="card-image">
                                 <img height="220" src="img/2.jpeg">
@@ -468,7 +565,7 @@ lowercase{
 
 
                         <div class="center">
-                          <div class="col s4 l4">
+                          <div class="col s12 l4">
                                 <div class="card">
                                   <div class="card-image">
                                     <img height="220" src="img/3.jpeg">
@@ -499,7 +596,7 @@ lowercase{
                   </h1>
 
                   <h4 style="text-align: center">
-                    You can mail to me at <span class="lowercase">ralouekapoor@gmail.com</span>
+                    You can mail to me at <span style="text-transform: lowercase;">ralouekapoor@gmail.com</span>
                   </h4>
                   
                   <h4 style="text-align: center">
